@@ -1,8 +1,17 @@
+** 文件 direct 模式下输入^返回上一级目录
+** 在打开或者新建文件操作模式下，C-h 向上进行目录返回 
+** org-mode 中补全使用 hippie-expand (M-/) 能够补全单词与语法.
+** toggle-truncate-lines 显示自动换行
+** 在做 gtd 的时候, C-c C-q 插入 tag 标签.
+** toggle-truncate-lines 显示自动换行
+** image-mode 显示文件中的图像  
+ 
+
+
+
 ** 快速浏览文件
 lisatiy/open-file-with-projectile-or-counsel-git (sps p f)
 使用 counsel-git 浏览文件比较快
-** 文件 direct 模式下输入^返回上一级目录
-** 在打开或者新建文件操作模式下，C-h 向上进行目录返回 
 ** 使用 iedit-mode 同时改变多个文件的文件名
 （Learn Emacs in 21 Days:day6 36 分钟左右）
 1. spc f j 打开文件的 direct 模式
@@ -26,13 +35,8 @@ C-x C-x 交换光标位置
 2. M-x ispell-region 把区域 mark 起来后，使用此命令可以查出此区域的错误
 3. M-x ispell-buffer 对当前的 buffer 进行检查
 4. ispell-word(z =)  查看单词是否准确并提示替换单词
-** org-mode 中补全使用 hippie-expand (M-/) 能够补全单词与语法.
 ** 使用有道翻译
 youdao-diction-search-at-point+ (spc o y) 翻译光标处的单词
-** toggle-truncate-lines 显示自动换行
-** 在做 gtd 的时候, C-c C-q 插入 tag 标签.
-** toggle-truncate-lines 显示自动换行
-** image-mode 显示文件中的图像  
 ** org-mode 模式下使用 LaTeX
 1. M-x org-cdlatex-mode 进入 cdlatex 模块，TAB 能够自动补全。
 2. , e e l l 从 org 导出.tex 文件
