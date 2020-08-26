@@ -1,0 +1,70 @@
+** 快速浏览文件
+lisatiy/open-file-with-projectile-or-counsel-git (sps p f)
+使用 counsel-git 浏览文件比较快
+** 文件 direct 模式下输入^返回上一级目录
+** 在打开或者新建文件操作模式下，C-h 向上进行目录返回 
+** 使用 iedit-mode 同时改变多个文件的文件名
+（Learn Emacs in 21 Days:day6 36 分钟左右）
+1. spc f j 打开文件的 direct 模式
+2. C-x C-q 进入编辑模式
+3. 选中要更改的文件名的字符内容
+4. M-x iedit-mode (spc s e)  匹配所有的更改字符内容
+5. 输入新的内容，会发现所有的文件名都在更改
+6. C-c C-c 保存
+** 使用 helm-ag 进行项目内文本搜索
+（Learn Emacs in 21 Days:day6 38 分钟左右）
+安装 pt，在 user-config 中制定 pt 用来搜素，这样 helm-ag 可以使用 pt 来搜索
+1. M-x helm-do-ag-project-root （spc p s)
+2. C-c C-e 打开 buffer，在 buffer 下可以直接编辑搜索到的结果
+3. 采用上面用 iedit-mode 可以同时修改文件中的内容，无需进入文件.
+** 选中一个区域
+er/expend-region (C-=) 选中一个区域 
+C-- C-= 向内减小选中区域
+C-x C-x 交换光标位置
+** 单词拼写检查功能
+1. M-x flyspell-mode 启动语法检查功能
+2. M-x ispell-region 把区域 mark 起来后，使用此命令可以查出此区域的错误
+3. M-x ispell-buffer 对当前的 buffer 进行检查
+4. ispell-word(z =)  查看单词是否准确并提示替换单词
+** org-mode 中补全使用 hippie-expand (M-/) 能够补全单词与语法.
+** 使用有道翻译
+youdao-diction-search-at-point+ (spc o y) 翻译光标处的单词
+** toggle-truncate-lines 显示自动换行
+** 在做 gtd 的时候, C-c C-q 插入 tag 标签.
+** toggle-truncate-lines 显示自动换行
+** image-mode 显示文件中的图像  
+** org-mode 模式下使用 LaTeX
+1. M-x org-cdlatex-mode 进入 cdlatex 模块，TAB 能够自动补全。
+2. , e e l l 从 org 导出.tex 文件
+3. , e e l o 从 org 导出 pdf 文件
+4. (org-toggle-latex-fragment) C-c C-x C-l 预览
+5. 如果有中文, 遇到问题时模板中加入以下两句
+#+begin_src latex
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \setCJKmainfont{SimSun}
+#+end_src>
+6. org-edit-latex
+https://github.com/et2010/org-edit-latex
+6. org-latex-cursor-toggle
+https://github.com/bokwoon95/.emacs.d/blob/9add1e013641b0bb6744f3b60584a277186c3ff0/lisp/org-latex-cursor-toggle.el
+** org-mode 模式中插入代码
+org-insert-item  (<s TAB or <s> TAB) 补全
+** 使用 ctag 补全代码
+M-x diminish-undo company-mode 后可以查看来自哪个补全
+1. 命令行中使用 ctages -e xxx.js 对单个文件生成 TAGS
+#+begin_src etags
+1. 对文件和目录混合的情况
+ctages -e xxx.js xxxfolder
+2. 对整个目录的情况
+ctages -eR foldername
+3. 查看生产的TAGS内容
+cat TAGS
+#+end_src
+2. M-x visit-tags-table 指定 TAGS, SPC h d v tags-table-list 查看目录是否准确
+3. SPC o c 自动生成 TAGS, 保存的路径为 E:/library/devcodstyle/Emacs/TAGSdict
+4. 补充，并不是所有的 major-mode 都可以使用 etags，company-etages.el 中的 company-etages-modes 函数中指定了可以使用 etages 的模式，没有 org-mode
+5. 而 org-mode 中倾向使用 hippie-expand
+** 使用 ctags 浏览代码
+1. ,  g d etages-select-find-tag-at-point 列出此函数的文件并可以跳转到该函数
+   (好像是 , g G or g)
+python 中竟然可以直接跳转, \(^o^)/~)
