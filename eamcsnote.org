@@ -5,10 +5,10 @@
 ** 在做 gtd 的时候, C-c C-q 插入 tag 标签.
 ** toggle-truncate-lines 显示自动换行
 ** image-mode 显示文件中的图像  
- 
-
-
-
+** C-w h,j,k,l 上下左右跳转窗口
+** C-x 1,2,... 选择某个窗口
+** C-x C-l 在 mini buffer 修改图片链接, C-c C-x C-v 预览图片, org-toggle-inline-images 显示图像的 links 或者预览
+** -----------------------------------------------------------------
 ** 快速浏览文件
 lisatiy/open-file-with-projectile-or-counsel-git (sps p f)
 使用 counsel-git 浏览文件比较快
